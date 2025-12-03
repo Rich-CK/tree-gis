@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #2e7d32;
+    --primary-hover: #1b5e20;
+    --secondary-color: #f5f5f5;
+    --secondary-hover: #e0e0e0;
+    --text-color: #333;
+    --border-color: #ccc;
+    --danger-color: #d32f2f;
+    --danger-hover: #b71c1c;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-group label {
+    width: 70px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    flex-shrink: 0;
+}
+
+input[type="text"],
+input[type="number"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+/* GPS Group */
+.gps-group {
+    align-items: flex-start;
+}
+
+.gps-inputs {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.gps-field {
+    display: flex;
+    align-items: center;
+    flex: 1 1 140px;
+}
+
+.gps-label {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#refreshGps {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+/* Suffix Group (Height, Diameter) */
+.suffix-group .input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.suffix-group input {
+    width: 100%;
+    padding-right: 50px;
+    /* Space for suffix */
+}
+
+.suffix {
+    position: absolute;
+    right: 15px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Photo Group */
+.photo-group {
+    align-items: flex-start;
+}
+
+.photo-controls {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.photo-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.action-btn:active {
+    transform: scale(0.98);
+}
+
+.action-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    flex: 1;
+    padding: 12px;
+    font-size: 1.2rem;
+}
+
+.action-btn.primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.action-btn.secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    flex: 1;
+}
+
+.action-btn.secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.action-btn.danger {
+    background-color: white;
+    color: var(--danger-color);
+    border: 2px solid var(--danger-color);
+    flex: 1;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.action-btn.danger:hover {
+    background-color: #ffebee;
+}
+
+.form-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.preview-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#photoPreview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .gps-inputs {
+        flex-direction: column;
+    }
+
+    .form-group label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .suffix-group input {
+        width: 100%;
+    }
+}
