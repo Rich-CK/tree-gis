@@ -236,4 +236,12 @@ input[type="number"]:focus {
     .suffix-group input {
         width: 100%;
     }
+
+    /* Make ID and Species inputs shorter on mobile as requested */
+    #treeId,
+    #species {
+        flex-grow: 0 !important;
+        width: 150px !important;
+        max-width: 150px !important;
+    }
 }

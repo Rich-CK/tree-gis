@@ -35,8 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- ID Generation Logic ---
+    function generateUniqueId() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        return `T-${year}${month}${day}-${hours}${minutes}${seconds}`;
+    }
+
     // Auto-fetch on load
     fetchGPS();
+    document.getElementById('treeId').value = generateUniqueId();
 
     // Manual refresh
     refreshGpsBtn.addEventListener('click', fetchGPS);

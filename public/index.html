@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>新增樹木</h1>
         </header>
-        
+
         <form id="treeForm">
             <div class="form-group">
                 <label for="treeId">編號 :</label>
@@ -39,8 +41,8 @@
                         <input type="number" step="any" id="gpsY" name="gpsY" placeholder="緯度" required>
                     </div>
                 </div>
-                <!-- Hidden button for manual refresh if needed, but auto-fetch is preferred -->
-                <button type="button" id="refreshGps" class="icon-btn" title="重新抓取 GPS"><i class="fa-solid fa-location-crosshairs"></i></button>
+                <button type="button" id="refreshGps" class="icon-btn" title="重新抓取 GPS"><i
+                        class="fa-solid fa-location-crosshairs"></i></button>
             </div>
 
             <div class="form-group suffix-group">
@@ -65,7 +67,7 @@
                     <input type="text" id="photoName" placeholder="尚未選擇照片" readonly>
                     <input type="file" id="photoInput" accept="image/*" style="display: none;">
                     <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
-                    
+
                     <div class="photo-buttons">
                         <button type="button" id="btnCamera" class="action-btn secondary">
                             <i class="fa-solid fa-camera"></i> 拍照
@@ -76,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="preview-container" id="previewContainer" style="display: none;">
                 <img id="photoPreview" src="" alt="Photo Preview">
             </div>
@@ -94,4 +96,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
